@@ -8,6 +8,18 @@ $font-family-base: "EB Garamond", serif;
 $headings-font-family: "EB Garamond", serif;
 $headings-font-weight: 700;
 
+/*-- scss:defaults --*/
+
+// 1. Increase the Base Font Size (1.1rem is perfect for legibility)
+$font-size-base: 1.2rem; 
+
+// 2. Adjust the line-height (crucial for elegant reading)
+// A higher line-height makes long blocks of text feel "airy" and expensive
+$line-height-base: 1.7; 
+
+// 3. Scale headings accordingly
+$headings-font-size: 2.5rem; // Keep headings large but proportional
+
 // 2. The "Warm Paper" Palette
 $body-bg: #f9f7f2;          // Main page: warm eggshell cream
 $header-bg: #f2eee4;        // Header/Navbar: slightly darker warm parchment
