@@ -11,20 +11,13 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "Welcome to my blog. I will be reviewing papers, discussing ideas and writing tutorials on Monte Carlo sampling algorithms and related topics at the interface of applied probability, computational statistics and machine learning. Most of research to date has been in the field of Monte Carlo, and in particular Markov chain Monte Carlo sampling algorithms. The idea is that to compute an expectation \\[\n\\mathbb{E}_\\pi[f] = \\int f(x)\\pi(dx),\n\\] where \\(f \\in L^2(\\pi)\\) is some function of interest and \\(\\pi\\) is some probability distribution, then we can simulate a single realisation of a Markov chain with transition kernel \\(P\\) that has limiting distribution \\(\\pi\\) and compute ergodic averages."
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
+    "text": "Welcome to my blog. I will review papers, discuss ideas and write tutorials on topics at the interface of applied probability, computational statistics and machine learning. Most of my research to date has been in Markov chain Monte Carlo sampling algorithms. The idea is that to compute an expectation \\[\n\\mathbb{E}_\\pi[f] = \\int f(x)\\pi(dx),\n\\] where \\(f \\in L^2(\\pi)\\) is some function of interest and \\(\\pi\\) is some probability distribution, then we can simulate a single realisation of a Markov chain with transition kernel \\(P\\) that has limiting distribution \\(\\pi\\) and compute ergodic averages.\nMarkov chains can be easily simulated, see below for an example.\n\n# generate storage variables\nnits &lt;- 1000\nx &lt;- rep(NA, nits)\nx[1] &lt;- rnorm(1)\na &lt;- 0.9\n\n# simulate chain\nfor (i in 2:nits) {\n    x[i] &lt;- a * x[i-1] + sqrt(1-a^2) * rnorm(1)\n}\n\n# plot results\nplot(x, type = 'l', pch = 16)\n\n\n\n\n\n\n\n\nI’m looking forward to sharing my thoughts on the blog!"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Notes on Probability and Computation",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\n\n\n\n\nApr 1, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nApr 1, 2026\n\n\nSamuel Livingstone\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nApr 1, 2026\n\n\nSamuel Livingstone\n\n\n\n\n\n\nNo matching items"
   }
 ]

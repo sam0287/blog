@@ -5,10 +5,32 @@ date: "2026-04-01"
 categories: [news]
 ---
 
-Welcome to my blog.  I will be reviewing papers, discussing ideas and writing tutorials on Monte Carlo sampling algorithms and related topics at the interface of applied probability, computational statistics and machine learning.  Most of research to date has been in the field of Monte Carlo, and in particular Markov chain Monte Carlo sampling algorithms. The idea is that to compute an expectation
+Welcome to my blog.  I will review papers, discuss ideas and write tutorials on topics at the interface of applied probability, computational statistics and machine learning.  Most of my research to date has been in Markov chain Monte Carlo sampling algorithms. The idea is that to compute an expectation
 $$
 \mathbb{E}_\pi[f] = \int f(x)\pi(dx),
 $$
 where $f \in L^2(\pi)$ is some function of interest and $\pi$ is some probability distribution, then we can simulate a single realisation of a Markov chain with transition kernel $P$ that has limiting distribution $\pi$ and compute ergodic averages.
 
-![](thumbnail.jpg)
+Markov chains can be easily simulated, see below for an example.
+
+```{r}
+
+# generate storage variables
+nits <- 1000
+x <- rep(NA, nits)
+x[1] <- rnorm(1)
+a <- 0.9
+
+# simulate chain
+for (i in 2:nits) {
+    x[i] <- a * x[i-1] + sqrt(1-a^2) * rnorm(1)
+}
+
+# plot results
+plot(x, type = 'l', pch = 16)
+
+```
+
+I'm looking forward to sharing my thoughts on the blog!
+
+<!-- ![](thumbnail.jpg) -->

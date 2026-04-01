@@ -110,3 +110,28 @@ $code-color: #4a4a4a;       // Softer text for code output
   font-size: 0.9rem;
   color: #7a5c4e; // Matches your elegant link/terracotta color
 }
+
+/*-- scss:rules --*/
+
+// 1. Refine the Code Chunk appearance
+pre.numberSource code, 
+code.sourceCode, 
+.cell-output pre {
+  font-size: 0.85rem !important;      // Shrink the font (default is usually 1rem)
+  background-color: #f2eee4 !important; // Match your header's warm parchment
+  border: 1px solid #e2ddd0 !important; // Soft tan border
+  border-radius: 4px;                 // Slightly rounded corners for elegance
+  color: #4a4a4a !important;          // Soften the text color
+}
+
+// 2. Adjust the inline code (code mentioned inside a sentence)
+code:not(pre code) {
+  background-color: #f2eee4;
+  color: #7a5c4e;                     // Match your terracotta link color
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+// 3. Optional: Soften the syntax highlighting colors
+// This makes the "bright" code colors look less neon on your cream background
+.header-section-number { color: #7a5c4e; }
