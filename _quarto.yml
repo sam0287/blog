@@ -2,20 +2,29 @@ project:
   type: website
 
 website:
-  title: "Blog"
+  title: "blog" # Changed to lowercase to match your repo name!
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/yourusername/blog
       - icon: twitter
         href: https://twitter.com
+
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
-
-
+    theme: [cosmo, custom.scss]
+    code-copy: true
+    # This block targets every possible category container
+    include-in-header:
+      text: |
+        <style>
+        .quarto-categories, 
+        .quarto-title-meta-category, 
+        .quarto-listing-category,
+        .category { 
+          display: none !important; 
+        }
+        </style>
+    
 

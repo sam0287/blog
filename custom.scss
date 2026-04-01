@@ -1,0 +1,112 @@
+/*-- scss:defaults --*/
+
+// 1. Fonts: Classical & Elegant
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Using EB Garamond for a prestigious, single-font literary look
+$font-family-base: "EB Garamond", serif;
+$headings-font-family: "EB Garamond", serif;
+$headings-font-weight: 700;
+
+// 2. The "Warm Paper" Palette
+$body-bg: #f9f7f2;          // Main page: warm eggshell cream
+$header-bg: #f2eee4;        // Header/Navbar: slightly darker warm parchment
+$body-color: #2c2c2c;       // Text: soft charcoal (less harsh than black)
+$headings-color: #1a1a1a;   // Headings: deep ink black
+$link-color: #7a5c4e;       // Links: muted terracotta
+
+// 3. Code Blocks: Integrating with the warmth
+$code-bg: #f0ede8;          // Muted warm grey/brown for code backgrounds
+$code-color: #4a4a4a;       // Softer text for code output
+
+/*-- scss:rules --*/
+
+// 4. Header & Navbar: Creating the warm separation
+.navbar, 
+#quarto-header,
+.quarto-title-banner {
+  background-color: $header-bg !important;
+  border-bottom: 1px solid #e2ddd0 !important; // Soft tan divider line
+}
+
+// Ensure the title block doesn't revert to cold grey
+.quarto-title-block {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+// 5. Typography Refinements
+.quarto-title h1 {
+  color: $headings-color;
+  border-bottom: none;
+}
+
+// Elegant Small Caps for the Navigation Menu
+.navbar-nav .nav-link {
+  color: #5a4a42 !important; 
+  font-variant: small-caps;
+  letter-spacing: 0.05rem;
+}
+
+// 6. Clean up Search & Icons
+.aa-input {
+  background-color: #fffefc !important;
+  border: 1px solid #dcd7c9 !important;
+}
+
+/*-- scss:rules --*/
+
+// 1. Unify the Header and Title Block colors
+.navbar, 
+#quarto-header,
+.quarto-title-block,
+.quarto-title-banner {
+  background-color: $header-bg !important;
+  border-bottom: none !important; 
+}
+
+// 2. Remove the "Ghost Strip" (The Margin Gap)
+#quarto-content {
+  margin-top: 0 !important; // Removes space above the main content
+}
+
+.quarto-title-block {
+  margin-top: 0 !important;    // Pulls the title block up to the header
+  margin-bottom: 2rem;         // Keeps space BELOW the title before the text starts
+  padding-top: 2rem;           // Adds a little internal padding so it doesn't look cramped
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2ddd0 !important; // Moves the divider line to the bottom of the title
+}
+
+// 3. Ensure the Breadcrumbs (if any) don't create a white bar
+.quarto-secondary-nav {
+  background-color: $header-bg !important;
+  border: none !important;
+}
+
+/*-- scss:rules --*/
+
+// 1. Remove the "box" around metadata
+.quarto-title-meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+// 2. Style the Date and Author text
+.quarto-title-meta-heading {
+  display: none !important; // Hide the "Author" or "Published" labels
+}
+
+.quarto-title-meta-contents {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #7a5c4e; // Matches your elegant link/terracotta color
+}
