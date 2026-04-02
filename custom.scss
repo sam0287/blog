@@ -1,106 +1,83 @@
 /*-- scss:defaults --*/
 
-// 1. Fonts: Classical & Elegant
+// Fonts
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
 
-// Using EB Garamond for a prestigious, single-font literary look
-$font-family-base: "EB Garamond", serif;
-$headings-font-family: "EB Garamond", serif;
-$headings-font-weight: 700;
+$font-family-base:      "EB Garamond", serif;
+$headings-font-family:  "EB Garamond", serif;
+$headings-font-weight:  700;
+$font-size-base:        1.2rem;
+$line-height-base:      1.7;
+$headings-font-size:    2.5rem;
 
-/*-- scss:defaults --*/
+// Warm Paper Palette
+$body-bg:       #f9f7f2;   // Main page: warm eggshell cream
+$header-bg:     #f2eee4;   // Header/Navbar: slightly darker warm parchment
+$body-color:    #2c2c2c;   // Text: soft charcoal
+$headings-color:#1a1a1a;   // Headings: deep ink black
+$link-color:    #7a5c4e;   // Links: muted terracotta
 
-// 1. Increase the Base Font Size (1.1rem is perfect for legibility)
-$font-size-base: 1.2rem; 
-
-// 2. Adjust the line-height (crucial for elegant reading)
-// A higher line-height makes long blocks of text feel "airy" and expensive
-$line-height-base: 1.7; 
-
-// 3. Scale headings accordingly
-$headings-font-size: 2.5rem; // Keep headings large but proportional
-
-// 2. The "Warm Paper" Palette
-$body-bg: #f9f7f2;          // Main page: warm eggshell cream
-$header-bg: #f2eee4;        // Header/Navbar: slightly darker warm parchment
-$body-color: #2c2c2c;       // Text: soft charcoal (less harsh than black)
-$headings-color: #1a1a1a;   // Headings: deep ink black
-$link-color: #7a5c4e;       // Links: muted terracotta
-
-// 3. Code Blocks: Integrating with the warmth
-$code-bg: #f0ede8;          // Muted warm grey/brown for code backgrounds
-$code-color: #4a4a4a;       // Softer text for code output
+// Code Blocks
+$code-bg:    #f0ede8;
+$code-color: #4a4a4a;
 
 /*-- scss:rules --*/
 
-// 4. Header & Navbar: Creating the warm separation
-.navbar, 
-#quarto-header,
-.quarto-title-banner {
-  background-color: $header-bg !important;
-  border-bottom: 1px solid #e2ddd0 !important; // Soft tan divider line
-}
+// ── Header, Navbar & Secondary Nav ───────────────────────────────────────────
 
-// Ensure the title block doesn't revert to cold grey
-.quarto-title-block {
-  background-color: transparent !important;
-  border-bottom: none !important;
-  margin-top: 0;
-  padding-top: 2rem;
-}
-
-// 5. Typography Refinements
-.quarto-title h1 {
-  color: $headings-color;
-  border-bottom: none;
-}
-
-// Elegant Small Caps for the Navigation Menu
-.navbar-nav .nav-link {
-  color: #5a4a42 !important; 
-  font-variant: small-caps;
-  letter-spacing: 0.05rem;
-}
-
-// 6. Clean up Search & Icons
-.aa-input {
-  background-color: #fffefc !important;
-  border: 1px solid #dcd7c9 !important;
-}
-
-/*-- scss:rules --*/
-
-// 1. Unify the Header and Title Block colors
-.navbar, 
+.navbar,
 #quarto-header,
 .quarto-title-block,
 .quarto-title-banner {
   background-color: $header-bg !important;
-  border-bottom: none !important; 
+  border-bottom: none !important;
 }
 
-// 2. Remove the "Ghost Strip" (The Margin Gap)
-#quarto-content {
-  margin-top: 0 !important; // Removes space above the main content
+.navbar {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  min-height: auto !important;
 }
 
-.quarto-title-block {
-  margin-top: 0 !important;    // Pulls the title block up to the header
-  margin-bottom: 2rem;         // Keeps space BELOW the title before the text starts
-  padding-top: 2rem;           // Adds a little internal padding so it doesn't look cramped
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #e2ddd0 !important; // Moves the divider line to the bottom of the title
-}
-
-// 3. Ensure the Breadcrumbs (if any) don't create a white bar
 .quarto-secondary-nav {
   background-color: $header-bg !important;
   border: none !important;
 }
 
-/*-- scss:rules --*/
+// ── Title Block ───────────────────────────────────────────────────────────────
 
-// 1. Remove the "box" around metadata
+.quarto-title-block {
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 1px solid #e2ddd0 !important;
+}
+
+#quarto-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+// ── Typography ────────────────────────────────────────────────────────────────
+
+.quarto-title h1,
+.quarto-title h1.title {
+  color: $headings-color;
+  border-bottom: none;
+  margin-top: 0 !important;
+  margin-bottom: 0.2rem !important;
+  line-height: 1.1;
+}
+
+.navbar-nav .nav-link {
+  color: #5a4a42 !important;
+  font-variant: small-caps;
+  letter-spacing: 0.05rem;
+}
+
+// ── Metadata ──────────────────────────────────────────────────────────────────
+
 .quarto-title-meta {
   display: flex;
   flex-direction: row;
@@ -111,68 +88,66 @@ $code-color: #4a4a4a;       // Softer text for code output
   padding: 0 !important;
 }
 
-// 2. Style the Date and Author text
 .quarto-title-meta-heading {
-  display: none !important; // Hide the "Author" or "Published" labels
+  display: none !important; // Hide "Author" / "Published" labels
 }
 
 .quarto-title-meta-contents {
   font-family: "EB Garamond", serif;
   font-style: italic;
   font-size: 0.9rem;
-  color: #7a5c4e; // Matches your elegant link/terracotta color
+  color: #7a5c4e;
 }
 
-/*-- scss:rules --*/
+// ── Search ────────────────────────────────────────────────────────────────────
 
-// 1. Refine the Code Chunk appearance
-pre.numberSource code, 
-code.sourceCode, 
+.aa-input {
+  background-color: #fffefc !important;
+  border: 1px solid #dcd7c9 !important;
+}
+
+// ── Code Blocks ───────────────────────────────────────────────────────────────
+
+pre.numberSource code,
+code.sourceCode,
 .cell-output pre {
-  font-size: 0.85rem !important;      // Shrink the font (default is usually 1rem)
-  background-color: #f2eee4 !important; // Match your header's warm parchment
-  border: 1px solid #e2ddd0 !important; // Soft tan border
-  border-radius: 4px;                 // Slightly rounded corners for elegance
-  color: #4a4a4a !important;          // Soften the text color
+  font-size: 0.85rem !important;
+  background-color: #f2eee4 !important;
+  border: 1px solid #e2ddd0 !important;
+  border-radius: 4px;
+  color: #4a4a4a !important;
 }
 
-// 2. Adjust the inline code (code mentioned inside a sentence)
 code:not(pre code) {
   background-color: #f2eee4;
-  color: #7a5c4e;                     // Match your terracotta link color
+  color: #7a5c4e;
   padding: 0.2em 0.4em;
   font-size: 0.9em;
 }
 
-// 3. Optional: Soften the syntax highlighting colors
-// This makes the "bright" code colors look less neon on your cream background
 .header-section-number { color: #7a5c4e; }
 
-/*-- scss:rules --*/
+// ── Code Toggle / Details Summary ────────────────────────────────────────────
 
-// 1. Slim down the Title Block vertically
-.quarto-title-block {
-  padding-top: 1rem !important;    // Reduce space above the title (default is 2rem+)
-  padding-bottom: 0.5rem !important; // Reduce space below the title/metadata
-  margin-top: 0 !important;        // Keep it glued to the navbar
-  margin-bottom: 1.5rem !important; // Reduce space between the title area and the body text
+.dt-button,
+summary.callout-toggle,
+details summary {
+  font-family: "EB Garamond", serif;
+  font-variant: small-caps;
+  color: #7a5c4e !important;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2ddd0;
+  margin-bottom: 1rem;
+  // list-style intentionally NOT set to none — keeps the disclosure arrow
 }
 
-// 2. Slim down the Navbar height if it feels too chunky
-.navbar {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
-  min-height: auto !important;
+// Colour the disclosure arrow to match the terracotta palette
+details summary::marker {
+  color: #7a5c4e;
 }
 
-// 3. Bring the main content up closer to the title
-#quarto-content {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-.quarto-title h1.title {
-  margin-top: 0 !important;
-  margin-bottom: 0.2rem !important;
-  line-height: 1.1; // Keeps the title from taking up extra vertical space
+details summary:hover,
+details summary:hover::marker {
+  color: #5a4a42 !important;
 }

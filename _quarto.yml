@@ -15,6 +15,8 @@ format:
   html:
     theme: [cosmo, custom.scss]
     code-copy: true
+    code-fold: true          # This makes them collapsed by default
+    code-summary: "Show Code" # This is the text on the button
     include-in-header:
       text: |
         <style>
@@ -27,5 +29,3 @@ format:
         </style>
         <script data-goatcounter="https://sam0287.goatcounter.com/count"
                 async src="//gc.zgo.at/count.js"></script>
-    
-
