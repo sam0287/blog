@@ -2,12 +2,12 @@ project:
   type: website
 
 website:
-  title: "blog" # Changed to lowercase to match your repo name!
+  title: "blog"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/yourusername/blog
+        href: https://github.com/sam0287/blog
       - icon: twitter
         href: https://twitter.com
 
@@ -15,7 +15,6 @@ format:
   html:
     theme: [cosmo, custom.scss]
     code-copy: true
-    # This block targets every possible category container
     include-in-header:
       text: |
         <style>
@@ -26,5 +25,7 @@ format:
           display: none !important; 
         }
         </style>
+        <script data-goatcounter="https://sam0287.goatcounter.com/count"
+                async src="//gc.zgo.at/count.js"></script>
     
 
