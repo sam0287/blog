@@ -147,3 +147,32 @@ code:not(pre code) {
 // 3. Optional: Soften the syntax highlighting colors
 // This makes the "bright" code colors look less neon on your cream background
 .header-section-number { color: #7a5c4e; }
+
+/*-- scss:rules --*/
+
+// 1. Slim down the Title Block vertically
+.quarto-title-block {
+  padding-top: 1rem !important;    // Reduce space above the title (default is 2rem+)
+  padding-bottom: 0.5rem !important; // Reduce space below the title/metadata
+  margin-top: 0 !important;        // Keep it glued to the navbar
+  margin-bottom: 1.5rem !important; // Reduce space between the title area and the body text
+}
+
+// 2. Slim down the Navbar height if it feels too chunky
+.navbar {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  min-height: auto !important;
+}
+
+// 3. Bring the main content up closer to the title
+#quarto-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.quarto-title h1.title {
+  margin-top: 0 !important;
+  margin-bottom: 0.2rem !important;
+  line-height: 1.1; // Keeps the title from taking up extra vertical space
+}
